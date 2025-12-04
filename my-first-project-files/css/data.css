@@ -33,14 +33,6 @@ body {
     grid-row: 2 / 3;
 }
 
-.error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: block;
-}
-
 input {
     color: #000;
     background-color: #FBFAF3;

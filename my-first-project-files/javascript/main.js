@@ -101,3 +101,25 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Form cleared.');
     });
 });
+
+// Get values from your form inputs
+let ticket = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    city: document.getElementById('city').value,
+    tickets: document.getElementById('numTickets').value,
+    section: document.getElementById('section').value
+};
+
+// Try to get existing tickets from localStorage
+// If nothing is stored yet, use an empty array
+let allTickets = JSON.parse(localStorage.getItem('tickets')) || [];
+
+// Add new ticket to our array
+allTickets.push(ticket);
+
+// Convert array to a string and save it
+localStorage.setItem('tickets', JSON.stringify(allTickets));
+
+// Now redirect to the table page
+window.location.href = 'html/data.html';
