@@ -7,7 +7,7 @@ margin: 1em 2em;
 body {
     margin: 0;
     padding: 0;
-    color: #000;
+    color: #333;
     background-color: #FBFAF3;
     background-image: url('../photos/background1.png');
     background-position: center center;
@@ -26,24 +26,26 @@ body {
 }
 
 #box_1 {
-    color: #000;
-    background-color: #FBFAF366;
-    border-radius: 12px;
+    color: #333;
+    background-color: #FBFAF388;
+    border-radius: 8px;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
 
 input {
-    color: #000;
+    color: #333;
     background-color: #FBFAF3;
-    border-radius: 12px;
+    border-color: #2323FF;
+    border-radius: 8px;
     margin: 0.4rem;
 }
 
 button {
-    color: #000;
+    color: #333;
     background-color: #FBFAF3;
-    border-radius: 12px;
+    border-color: #2323FF;
+    border-radius: 8px;
     margin: 0.4rem;
 }
 
@@ -52,8 +54,8 @@ button:hover {
 }
 
 #footerlol {
-    color: #000;
-    background-color: #FBFAF366;
+    color: #333;
+    background-color: #FBFAF388;
     text-align: center;
     margin: 0;
     padding: 25px;

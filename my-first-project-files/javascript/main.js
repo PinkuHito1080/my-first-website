@@ -12,22 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const usernameError = document.getElementById('usernameError');
     const passwordError = document.getElementById('passwordError');
 
-    // --- Validation Functions ---
+    // Validation Functions
 
-    // 1. Validate Email using a basic regex
+    // Validate Email using a basic regex
     function validateEmail(email) {
         // Simple regex: checks for 'something@something.domain'
         const re = /\S+@\S+\.\S+/;
         return re.test(String(email).toLowerCase());
     }
 
-    // 2. Validate Username
+    // Validate Username
     function validateUsername(username) {
         // Must be between 3 and 15 characters
         return username.length >= 3 && username.length <= 15;
     }
 
-    // 3. Validate Password
+    // Validate Password
     function validatePassword(password) {
         // Must be at least 8 characters long
         // Must contain at least one letter and one number
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return lengthCheck && letterCheck && numberCheck;
     }
 
-    // --- Form Submission Handler ---
+    // Form Submission Handler
 
     form.addEventListener('submit', function(event) {
         // Prevent the default form submission (which reloads the page)
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let isValid = true;
 
-        // --- Run Checks ---
+        // Run Checks
 
-        // 1. Email Validation
+        // Email Validation
         if (!validateEmail(emailInput.value)) {
             emailError.textContent = 'Please enter a valid email address (e.g., user@domain.com).';
             isValid = false;
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
 
-        // --- Final Action ---
+        // Final Action
 
         if (isValid) {
             // If all checks pass, you would typically:
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- 2. Cancel Button Functionality ---
+    // Cancel Button Functionality
 
     cancelButton.addEventListener('click', function() {
         // Clears all form fields back to their initial state
@@ -102,24 +102,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Get values from your form inputs
-let ticket = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    city: document.getElementById('city').value,
-    tickets: document.getElementById('numTickets').value,
-    section: document.getElementById('section').value
-};
+// Submit form data and pass it to second page
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    // STOP the form from submitting and reloading the page
+    event.preventDefault();
 
-// Try to get existing tickets from localStorage
-// If nothing is stored yet, use an empty array
-let allTickets = JSON.parse(localStorage.getItem('tickets')) || [];
+    // Get the values from the four input fields using their IDs
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const numTickets = document.getElementById('numTickets').value;
 
-// Add new ticket to our array
-allTickets.push(ticket);
+    // Save all four values to localStorage
+    // Each piece of data gets its own unique key (e.g., 'saved_username')
+    localStorage.setItem('saved_username', username);
+    localStorage.setItem('saved_email', email);
+    localStorage.setItem('saved_password', password);
+    localStorage.setItem('saved_tickets', numTickets);
 
-// Convert array to a string and save it
-localStorage.setItem('tickets', JSON.stringify(allTickets));
+    // Redirect the user to the second page
+    // Note: Update the path 'second-page.html' if your file is named differently or located elsewhere
+    window.location.href = 'html/data.html';
+});
 
-// Now redirect to the table page
-window.location.href = 'html/data.html';
