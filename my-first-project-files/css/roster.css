@@ -6,7 +6,7 @@ margin: 1em 2em;
 
 body {
     color: #fff;
-    background-color: #260076;
+    background-color: #460076;
     background-image: url('../images/cool.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,44 +31,11 @@ body {
     grid-row: 2 / 3;
 }
 
-.error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-#signUpText {
-    color: #fff;
-    margin: 1rem;
-}
-
-input {
-    color: #333;
-    background-color: #FBFAF3;
-    border-color: #FF44CC;
-    border-radius: 8px;
-    margin: 0.4rem;
-}
-
 button {
     color: #333;
     background-color: #FBFAF3;
     border-color: #FF44CC;
     border-radius: 8px;
-    margin: 0.4rem;
-}
-
-select {
-    color: #333;
-    background-color: #FBFAF3;
-    border-color: #FF44CC;
-    border-radius: 8px;
-    margin: 0.4rem;
-}
-
-p {
     margin: 0.4rem;
 }
 
@@ -78,5 +45,7 @@ p {
     text-align: center;
     margin: 0;
     padding: 10px;
+    grid-row: 3 / 3;
+    grid-column: 3 / 3;
 }
 

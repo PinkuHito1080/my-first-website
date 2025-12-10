@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
     const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
+    const locationInput = document.getElementById('location');
+    const rollInput = document.getElementById('roll');
 
     // Get the Cancel button element (which has type="button")
     const cancelButton = form.querySelector('button[type="button"]');
@@ -110,18 +111,17 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Get the values from the four input fields using their IDs
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const numTickets = document.getElementById('numTickets').value;
+    const location = document.getElementById('location').value;
+    const roll = document.getElementById('roll').value;
 
     // Save all four values to localStorage
     // Each piece of data gets its own unique key (e.g., 'saved_username')
     localStorage.setItem('saved_username', username);
     localStorage.setItem('saved_email', email);
-    localStorage.setItem('saved_password', password);
-    localStorage.setItem('saved_tickets', numTickets);
+    localStorage.setItem('saved_location', location);
+    localStorage.setItem('saved_roll', roll);
 
     // Redirect the user to the second page
-    // Note: Update the path 'second-page.html' if your file is named differently or located elsewhere
-    window.location.href = 'html/data.html';
+    window.location.href = 'html/roster.html';
 });
 
